@@ -1,0 +1,239 @@
+entity Page{
+name  String
+description  String
+modelId  String
+pageId  Integer
+type  String
+fullScreen  Boolean  
+history  String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity FlexBox{
+justifyContent String
+spacing Spacing
+attributes Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Spacing{
+className String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Attributes{
+className String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Elements{
+spacing Spacing
+type ElementType
+attributes Attributes
+button Button 
+text Text
+table Table
+form FormWrap
+badge Badge
+icon Icon
+image Image
+}
+enum ElementType{
+Text, Button, Table, Link, Icon, Badge, Image, WizardForm, Function_text
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Button{
+isLink Boolean,
+attributes Attributes
+link String,
+displayText String,
+fontSize String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Text{
+isFunction Boolean
+attributes Attributes
+displayText String
+fontSize String
+genericObject String
+function String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Table{
+body Body
+head Head
+attributes Attributes
+genericObject String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Head{
+attributes Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Label{
+displayAtt DisplayAtt
+type String
+spacing Spacing
+text Text
+icon Icon
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Body{
+attributes Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity TabelValues{
+attributes Attributes
+
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity DisplayAtt{
+name String
+spacing Spacing
+attributes Attributes
+type ElementType
+text Text
+badge Badge
+icon Icon
+image Image
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity BadgeType{
+status String
+type ColorEnum
+attributes Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity FormWrap{
+id String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Badge{
+ color ColorEnum
+}
+
+
+enum ColorEnum{
+Plain, Grey, Blue_dark, Red_dark, Red_light, Green_light, Yellow_li
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Icon {
+attributes Attributes
+ariaLabel String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Image{
+attributes Attributes
+source String
+alt String
+
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+ entity ObjectContainingString {
+    name String
+}
+
+
+relationship OneToMany {
+    Page{genericObjectsList} to ObjectContainingString{json}
+    Page{flexBoxes} to FlexBox
+    
+    DisplayAtt{badgeType} to BadgeType
+    TabelValues{permissions} to ObjectContainingString{json}
+    TabelValues{displayAtt} to DidisplayAtt
+    Body{tableValues} to TabelValues
+    Label{permissions} to ObjectContainingString{json}
+    Head{labels} to Label
+    Elements{elements} to Elements
+    Spacing{margin} to ObjectContainingString{json}
+    Spacing{padding} to ObjectContainingString{json}
+    FlexBox{elements} to Elements
+    
+    
+ } 
+    
+
