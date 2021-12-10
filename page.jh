@@ -1,0 +1,163 @@
+entity Page{
+name  String
+description  String
+modelId  String
+pageId  Integer
+type  String
+fullScreen  Boolean  
+history  String
+}
+
+
+entity Spacing{
+className String
+}
+
+
+entity FlexBox{
+justifyContent String,
+spacing Spacing,
+attributes Attributes
+}
+
+entity Attributes{
+className String
+}
+
+
+entity Elements{
+spacing Spacing
+type ElementType
+attributes Attributes
+button Button 
+text Text
+table Table
+form FormWrap
+badge Badge
+icon Icon
+image Image
+}
+enum ElementType{
+Text, Button, Table, Link, Icon, Badge, Image, WizardForm, Function_text
+}
+
+
+entity Button{
+isLink Boolean,
+attributes Attributes
+link String,
+displayText String,
+fontSize String
+}
+
+
+entity Text{
+isFunction Boolean
+attributes Attributes
+displayText String
+fontSize String
+genericObject String
+function String
+}
+
+
+entity Table{
+body Body
+head Head
+attributes Attributes
+genericObject String
+}
+
+
+entity Head{
+attributes Attributes
+}
+
+
+entity Label{
+displayAtt DisplayAtt
+type String
+spacing Spacing
+text Text
+icon Icon
+}
+
+
+entity Body{
+attributes Attributes
+}
+
+entity TabelValues{
+attributes Attributes
+
+}
+
+entity DisplayAtt{
+name String
+spacing Spacing
+attributes Attributes
+type ElementType
+text Text
+badge Badge
+icon Icon
+image Image
+}
+
+
+entity BadgeType{
+status String
+type ColorEnum
+attributes Attributes
+}
+
+entity FormWrap{
+id String
+}
+
+
+entity Badge{
+ color ColorEnum
+}
+
+
+enum ColorEnum{
+Plain, Grey, Blue_dark, Red_dark, Red_light, Green_light, Yellow_li
+}
+
+entity Icon {
+attributes Attributes
+ariaLabel String
+}
+
+entity Image{
+attributes Attributes
+source String
+alt String
+
+}
+
+
+ entity ObjectContainingString {
+    name String
+}
+
+
+relationship OneToMany {
+    Page{genericObjectsList} to ObjectContainingString{json}
+    Page{flexBoxes} to FlexBox
+    
+    DisplayAtt{badgeType} to BadgeType
+    TabelValues{permissions} to ObjectContainingString{json}
+    TabelValues{displayAtt} to DidisplayAtt
+    Body{tableValues} to TabelValues
+    Label{permissions} to ObjectContainingString{json}
+    Head{labels} to Label
+    Elements{elements} to Elements
+    Spacing{margin} to ObjectContainingString{json}
+    Spacing{padding} to ObjectContainingString{json}
+    FlexBox{elements} to Elements
+    
+    
+ } 
+    
+
