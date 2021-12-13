@@ -1,0 +1,108 @@
+{
+  "name": "Elements",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ElementType",
+      "fieldValues": "Text,Button,Table,Link,Icon,Badge,Image,WizardForm,Function_text"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "spacing",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "spacing",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "button",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "button",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "text",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "text",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "table",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "table",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "formWrap",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "form",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "badge",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "badge",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "icon",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "icon",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "image",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "image",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "elements",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "elementList"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "elements",
+      "otherEntityRelationshipName": "elementList",
+      "relationshipName": "elements"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "flexBox",
+      "otherEntityRelationshipName": "elements",
+      "relationshipName": "flexbox"
+    }
+  ],
+  "entityTableName": "elements",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213051937"
+}
