@@ -1,0 +1,38 @@
+{
+  "name": "Spacing",
+  "fields": [
+    {
+      "fieldName": "className",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "objectContainingString",
+      "otherEntityRelationshipName": "json1",
+      "relationshipName": "margin"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "objectContainingString",
+      "otherEntityRelationshipName": "json2",
+      "relationshipName": "padding"
+    }
+  ],
+  "entityTableName": "spacing",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074744"
+}

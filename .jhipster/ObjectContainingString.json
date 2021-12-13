@@ -1,0 +1,56 @@
+{
+  "name": "ObjectContainingString",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "page",
+      "otherEntityRelationshipName": "genericObjectsList",
+      "relationshipName": "json"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabelValues",
+      "otherEntityRelationshipName": "objectContainingString",
+      "relationshipName": "permissions"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "label",
+      "otherEntityRelationshipName": "objectContainingString",
+      "relationshipName": "permissions1"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "margin",
+      "relationshipName": "json1"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "padding",
+      "relationshipName": "json2"
+    }
+  ],
+  "entityTableName": "object_containing_string",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074801"
+}

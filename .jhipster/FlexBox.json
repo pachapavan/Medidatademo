@@ -1,0 +1,52 @@
+{
+  "name": "FlexBox",
+  "fields": [
+    {
+      "fieldName": "justifyContent",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "flexBox",
+      "relationshipName": "spacing",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "flexBox",
+      "relationshipName": "attributes",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "elements",
+      "otherEntityRelationshipName": "flexbox",
+      "relationshipName": "elements"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "page",
+      "otherEntityRelationshipName": "flexBoxes",
+      "relationshipName": "page"
+    }
+  ],
+  "entityTableName": "flex_box",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074745"
+}

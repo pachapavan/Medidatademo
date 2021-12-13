@@ -1,0 +1,61 @@
+{
+  "name": "Label",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "displayAtt",
+      "otherEntityRelationshipName": "label",
+      "relationshipName": "displayAtt",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "label",
+      "relationshipName": "spacing",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "text",
+      "otherEntityRelationshipName": "label",
+      "relationshipName": "text",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "icon",
+      "otherEntityRelationshipName": "label",
+      "relationshipName": "icon",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "objectContainingString",
+      "otherEntityRelationshipName": "permissions1",
+      "relationshipName": "objectContainingString"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "head",
+      "otherEntityRelationshipName": "label",
+      "relationshipName": "labels"
+    }
+  ],
+  "entityTableName": "label",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074752"
+}
