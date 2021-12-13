@@ -1,0 +1,26 @@
+{
+  "name": "Badge",
+  "fields": [
+    {
+      "fieldName": "color",
+      "fieldType": "ColorEnum",
+      "fieldValues": "Plain,Grey,Blue_dark,Red_dark,Red_light,Green_light,Yellow_li"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "badge",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074758"
+}

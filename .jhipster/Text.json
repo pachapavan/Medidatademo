@@ -1,0 +1,49 @@
+{
+  "name": "Text",
+  "fields": [
+    {
+      "fieldName": "isFunction",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "displayText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fontSize",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "genericObject",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "function",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "text",
+      "relationshipName": "attributes",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "text",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074749"
+}

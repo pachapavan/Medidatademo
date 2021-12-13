@@ -1,0 +1,85 @@
+{
+  "name": "DisplayAtt",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ElementType",
+      "fieldValues": "Text,Button,Table,Link,Icon,Badge,Image,WizardForm,Function_text"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "spacing",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "spacing",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "attributes",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "text",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "text",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "badge",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "badge",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "icon",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "icon",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "image",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "image",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "badgeType",
+      "otherEntityRelationshipName": "badgeType",
+      "relationshipName": "badgeType"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabelValues",
+      "otherEntityRelationshipName": "displayAtt",
+      "relationshipName": "displayAtt"
+    }
+  ],
+  "entityTableName": "display_att",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213074755"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Page",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modelId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pageId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullScreen",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "history",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "objectContainingString",
+      "otherEntityRelationshipName": "json",
+      "relationshipName": "genericObjectsList"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "flexBox",
+      "otherEntityRelationshipName": "page",
+      "relationshipName": "flexBoxes"
+    }
+  ],
+  "entityTableName": "page",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211213074743"
+}
