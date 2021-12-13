@@ -1,0 +1,25 @@
+{
+  "name": "Attributes",
+  "fields": [
+    {
+      "fieldName": "className",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "attributes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213051936"
+}

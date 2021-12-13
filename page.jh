@@ -1,0 +1,259 @@
+entity Page{
+name  String
+description  String
+modelId  String
+pageId  Integer
+type  String
+fullScreen  Boolean  
+history  String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Spacing{
+className String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity FlexBox{
+justifyContent String
+}
+relationship OneToOne {
+	FlexBox{spacing} to Spacing
+    FlexBox{attributes} to Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Attributes{
+className String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Elements{
+ type ElementType
+}
+relationship OneToOne {
+	Elements{spacing} to Spacing
+    Elements{spacing} to Attributes
+    Elements{button} to Button
+    Elements{text} to Text
+    Elements{table} to Table
+    Elements{form} to FormWrap
+    Elements{badge} to Badge
+    Elements{icon} to Icon
+    Elements{image} to Image
+    
+}
+enum ElementType{
+Text, Button, Table, Link, Icon, Badge, Image, WizardForm, Function_text
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Button{
+isLink Boolean,
+
+link String,
+displayText String,
+fontSize String
+}
+relationship OneToOne {
+Button {attributes} to Attributes
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Text{
+isFunction Boolean
+displayText String
+fontSize String
+genericObject String
+function String
+}
+relationship OneToOne {
+Text {attributes} to Attributes
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Table{
+genericObject String
+}
+relationship OneToOne {
+Table {attributes} to Attributes
+Table {body} to Body
+Table {head} to Head
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Head{
+
+}
+relationship OneToOne {
+Head{attributes} to Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Label{
+
+}
+relationship OneToOne {
+Label{displayAtt} to DisplayAtt
+Label{spacing} to Spacing
+Label{text} to Text
+Label{icon} to Icon
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Body{
+}
+relationship OneToOne {
+Body{attributes} to Attributes
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity TabelValues{
+}
+relationship OneToOne {
+TabelValues{attributes} to Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity DisplayAtt{
+name String
+type ElementType
+}
+relationship OneToOne {
+DisplayAtt{spacing} to Spacing
+DisplayAtt{attributes} to Attributes
+DisplayAtt{text} to Text
+DisplayAtt{badge} to Badge
+DisplayAtt{icon} to Icon
+DisplayAtt{image} to Image
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity BadgeType{
+status String
+type ColorEnum
+}
+
+relationship OneToOne {
+BadgeType{attributes} to Attributes
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity FormWrap{
+id String
+}
+
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Badge{
+ color ColorEnum
+}
+
+
+enum ColorEnum{
+Plain, Grey, Blue_dark, Red_dark, Red_light, Green_light, Yellow_li
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Icon {
+ariaLabel String
+}
+relationship OneToOne {
+Icon{attributes} to Attributes
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+entity Image{
+source String
+alt String
+}
+relationship OneToOne {
+Image{attributes} to Attributes
+}
+@skipClient 
+@skipResource 
+@skipService 
+@skipRepository 
+@skipDto
+ entity ObjectContainingString {
+    name String
+}
+
+
+relationship OneToMany {
+    Page{genericObjectsList} to ObjectContainingString{json}
+    Page{flexBoxes} to FlexBox
+    DisplayAtt to BadgeType{badgeType} 
+    TabelValues to ObjectContainingString{permissions}
+    TabelValues to DisplayAtt{displayAtt}
+    Body to TabelValues{tableValues} 
+    Label to ObjectContainingString{permissions1}
+    Head to Label{labels}
+    Elements{elementList} to Elements{elements}
+    Spacing{margin} to ObjectContainingString{json1}
+    Spacing{padding} to ObjectContainingString{json2}
+    FlexBox{elements} to Elements{flexbox}
+    
+    
+ } 
+    
+

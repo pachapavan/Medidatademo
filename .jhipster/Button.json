@@ -1,0 +1,45 @@
+{
+  "name": "Button",
+  "fields": [
+    {
+      "fieldName": "isLink",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "displayText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fontSize",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "button",
+      "relationshipName": "attributes",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "button",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipClient": true,
+  "skipResource": true,
+  "skipService": true,
+  "skipRepository": true,
+  "skipDto": true,
+  "changelogDate": "20211213051938"
+}
